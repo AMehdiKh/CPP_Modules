@@ -3,23 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+         #
+#    By: amehdikh <amehdikh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/11 06:56:20 by ael-khel          #+#    #+#              #
-#    Updated: 2023/08/11 06:57:35 by ael-khel         ###   ########.fr        #
+#    Updated: 2023/08/21 03:41:43 by amehdikh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################################################################################
 NAME = replace
 ################################################################################
-OBJ_DIR = objs
-
-FILES = main Weapon HumanA HumanB
-
-SRCS = ${addsuffix .cpp, $(FILES)}
-
-OBJS = ${SRCS:%.cpp=$(OBJ_DIR)/%.o}
+SRC = main.cpp
 ################################################################################
 CC = g++
 
@@ -29,17 +23,12 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 .PHONY: clean
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(CC) $(OBJS) -o $@
-
-$(OBJ_DIR)/%.o: %.cpp Weapon.hpp HumanA.hpp HumanB.hpp
-	@mkdir -p $(@D)
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME): $(SRC)
+	$(CC) $(CFLAGS) $(SRC) -o $@
 
 clean:
-	$(RM) -r $(OBJ_DIR)
+	$(RM) $(NAME)
 
 fclean: clean
-	$(RM) $(NAME)
 
 re: clean all
