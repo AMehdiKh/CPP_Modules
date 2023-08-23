@@ -3,37 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ael-khel <ael-khel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 10:51:14 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/08/11 02:16:48 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:51:01 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 /*
-	newZombie() Creates Zombie object allocated with new in the heap and Returns
-	pointer to the object which means we can use it and announce it outside
-	the scope of the newZombie() unlike if it was allocated in the stack,
-	which also means it will be destroyed after freeing the memory allocated with
-	delete.
+	Since newZombie() returns pointer and annouces itself outside the function, then
+	you must allocate the object on the heap so you can use it outside, if you try to
+	allocate it on the stack, the object will be destroyed immediately after newZombie()
+	scope ends.
+	Because you allocate it on the heap using [new], then it will be destroyed only after
+	freeing the memory allocated using [delete], otherwise it will still on the memory.
 */
-Zombie*	newZombie( std::string name );
+Zombie	*newZombie( std::string name );
 
 /*
-	randomChump() Creates Zombie object allocated in the stack and announces itself,
-	unlike newZombie() we can't return the object so we can use it and announce it outside 
-	randomChump() scope and this because the object is allocated in the function stack
-	which means it will be destroyed immediately after randomChump() lifetime end.
+	Since randomChump() returns void and annouces itself inside the function, then there
+	is no need to allocates the object on the heap because we won't use it outside the
+	function scope.
+	the object will be destroyed immediately after randomChump() scope end.
 */
 void	randomChump( std::string name );
 
 int main( void )
 {
-	Zombie	*zombie_ptr = newZombie("l3rbi");
+	Zombie	*zombie_ptr = newZombie("A");
 	zombie_ptr->announce();
-	randomChump("montasir");
+	randomChump("B");
 	delete zombie_ptr;
 	return (0);
 }

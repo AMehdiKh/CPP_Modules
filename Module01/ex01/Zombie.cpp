@@ -3,18 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ael-khel <ael-khel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 02:02:57 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/08/11 03:49:11 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/08/23 14:58:31 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie( void ) : _name("null") {}
+Zombie::Zombie( void ) : _name("null")
+{
+	std::cout << "Zombie has been created.\n";
+}
 
-Zombie::Zombie( std::string name ) : _name(name) {}
+Zombie::Zombie( std::string name ) : _name(name)
+{
+	std::cout << this->_name << ": has been created.\n";
+}
 
 Zombie::~Zombie( void )
 {
