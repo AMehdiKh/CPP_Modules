@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amehdikh <amehdikh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-khel <ael-khel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 05:11:15 by amehdikh          #+#    #+#             */
-/*   Updated: 2023/08/21 06:55:45 by amehdikh         ###   ########.fr       */
+/*   Updated: 2023/08/24 22:33:53 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
+
+Harl::Harl( void ) {}
 
 void	Harl::debug( void )
 {
@@ -63,6 +65,7 @@ void	Harl::complain( std::string level )
 			this->error();
 			break;
 		default:
-			std::cout << "[ Probably complaining about insignificant problems ]\n\n";
+			std::cout << "[ Probably complaining about insignificant problems ]\n";
 	}
 }
+Harl::~Harl( void ) {}

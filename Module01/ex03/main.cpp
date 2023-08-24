@@ -3,21 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: ael-khel <ael-khel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 04:14:13 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/08/11 06:54:51 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/08/24 22:59:07 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 #include "HumanA.hpp"
 #include "HumanB.hpp"
-
-// WHY ? because reference can't initialize with NULL unlike pointer
-// don't forget that is mandatory to initialize weapon member in constructor 
-// and thats why humanb take pointer unlike humana
-// setweapon in humana is default assignment operator while humanb we initialize the address to the pointer
 
 int main(void)
 {

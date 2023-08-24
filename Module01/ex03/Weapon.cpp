@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/11 04:14:16 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/08/23 15:07:28 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/08/24 23:01:00 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,4 @@ const std::string&	Weapon::getType( void ) const
 	return (this->_type);
 }
 
+Weapon::~Weapon( void ) {}

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amehdikh <amehdikh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ael-khel <ael-khel@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 05:05:01 by amehdikh          #+#    #+#             */
-/*   Updated: 2023/08/21 05:10:37 by amehdikh         ###   ########.fr       */
+/*   Updated: 2023/08/24 22:33:22 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ class   Harl {
 		void	error( void );
 
 	public:
+		Harl( void );
+		~Harl( void );
 		void	complain( std::string level );
 };
 
