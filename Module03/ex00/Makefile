@@ -5,17 +5,17 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/22 02:13:33 by ael-khel          #+#    #+#              #
-#    Updated: 2023/09/04 00:48:53 by ael-khel         ###   ########.fr        #
+#    Created: 2023/09/04 00:52:29 by ael-khel          #+#    #+#              #
+#    Updated: 2023/09/04 00:52:32 by ael-khel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################################################################################
-NAME = Fixed
+NAME = ClapTrap
 ################################################################################
 OBJ_DIR = objs
 
-FILES = main Fixed
+FILES = main ClapTrap
 
 SRCS = ${addsuffix .cpp, $(FILES)}
 
@@ -32,7 +32,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $@
 
-$(OBJ_DIR)/%.o: %.cpp Fixed.hpp
+$(OBJ_DIR)/%.o: %.cpp ClapTrap.hpp
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 

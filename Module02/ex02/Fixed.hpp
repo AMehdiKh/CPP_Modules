@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 02:13:02 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/04 00:49:12 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/04 00:49:51 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,33 @@ class	Fixed {
 		Fixed( const float );
 		~Fixed( void );
 		Fixed&	operator = ( const Fixed & );
-		int		getRawBits( void ) const;
-		void	setRawBits( int const raw );
-		float	toFloat( void ) const;
-		int		toInt( void ) const;
+
+		bool			operator > ( const Fixed & );
+		bool			operator < ( const Fixed & );
+		bool			operator >= ( const Fixed & );
+		bool			operator <= ( const Fixed & );
+		bool			operator == ( const Fixed & );
+		bool			operator != ( const Fixed & );
+
+		Fixed			operator + ( const Fixed & );
+		Fixed			operator - ( const Fixed & );
+		Fixed			operator * ( const Fixed & );
+		Fixed			operator / ( const Fixed & );
+
+		Fixed&			operator ++ ( void );
+		Fixed			operator ++ ( int dummy_param );
+		Fixed&			operator -- ( void );
+		Fixed			operator -- ( int dummy_param );
+
+		static Fixed&	min(Fixed &, Fixed &);
+		static const Fixed&	min(const Fixed &, const Fixed &);
+		static Fixed&	max(Fixed &, Fixed &);
+		static const Fixed&	max(const Fixed &, const Fixed &);
+
+		int				getRawBits( void ) const;
+		void			setRawBits( const int );
+		float			toFloat( void ) const;
+		int				toInt( void ) const;
 };
 
 std::ostream&	operator << ( std::ostream &outStream, const Fixed& object );
