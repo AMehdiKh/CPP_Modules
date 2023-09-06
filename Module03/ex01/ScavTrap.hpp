@@ -1,39 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 02:13:02 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/04 15:36:40 by ael-khel         ###   ########.fr       */
+/*   Created: 2023/09/04 18:27:52 by ael-khel          #+#    #+#             */
+/*   Updated: 2023/09/04 18:42:49 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
 
-class	Fixed {
+class   ScavTrap : public   ClapTrap {
 
-	private:
+	private	:
 
-		int					_fixedPoint;
-		static const int	_fractionalBits;
+		std::string	_name;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
 
-	public:
 
-		Fixed( void );
-		Fixed( const Fixed & );
-		~Fixed();
+	public	:
 
-		int		getRawBits( void ) const;
-		void	setRawBits( int const );
+    	ClapTrap( void );
+		ClapTrap( std::string );
+		ClapTrap( const ClapTrap & );
+		~ClapTrap();
 
-		Fixed&	operator= ( const Fixed & );
+		void		attack( const std::string& );
+		void		takeDamage( unsigned int );
+		void		beRepaired( unsigned int );
+
+		ClapTrap&	operator = ( const ClapTrap & );
 
 };
 

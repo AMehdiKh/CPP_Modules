@@ -1,26 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/22 02:13:05 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/06 15:18:03 by ael-khel         ###   ########.fr       */
+/*   Created: 2023/09/06 00:25:18 by ael-khel          #+#    #+#             */
+/*   Updated: 2023/09/06 03:28:53 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
-bool bsp( Point const a, Point const b, Point const c, Point const point);
+Point::Point( void ) : _x(0), _y(0) {}
 
-int main ( void )
+Point::Point( const float x, const float y) : _x(x), _y(y) {}
+
+Point::Point( const Point &object ) : _x(object._x), _y(object._y) {}
+
+Point::~Point() {};
+
+Point&	Point::operator = ( const Point &object )
 {
+	( void ) object;
+	return (*this);
+}
 
-	if ( bsp(Point(), Point(2, 3), Point(3, -1), Point()) )
-		std::cout << "The point is inside the triangle.\n";
-	else
-		std::cout << "The point is not inside the triangle.\n";
+const Fixed&	Point::getX( void ) const
+{
+	return (this->_x);
+}
 
-    return (0);
+const Fixed&	Point::getY( void ) const
+{
+	return (this->_y);
 }

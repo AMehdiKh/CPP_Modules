@@ -6,16 +6,16 @@
 #    By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/22 02:13:33 by ael-khel          #+#    #+#              #
-#    Updated: 2023/09/04 00:51:14 by ael-khel         ###   ########.fr        #
+#    Updated: 2023/09/06 01:49:37 by ael-khel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################################################################################
-NAME = Fixed
+NAME = bsp
 ################################################################################
 OBJ_DIR = objs
 
-FILES = main Fixed
+FILES = main Fixed Point bsp
 
 SRCS = ${addsuffix .cpp, $(FILES)}
 
@@ -32,7 +32,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $@
 
-$(OBJ_DIR)/%.o: %.cpp Fixed.hpp
+$(OBJ_DIR)/%.o: %.cpp Fixed.hpp Point.hpp
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
