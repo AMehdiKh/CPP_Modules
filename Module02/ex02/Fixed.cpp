@@ -6,12 +6,11 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/22 02:13:00 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/06 15:26:19 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/06 18:04:37 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <cmath>
 
 const int	Fixed::_fractionalBits = 8;
 
@@ -106,21 +105,18 @@ bool	Fixed::operator != ( const Fixed &object ) const
 Fixed	Fixed::operator + ( const Fixed &object ) const
 {
 	Fixed	tmpObject(this->toFloat() + object.toFloat());
-
 	return (tmpObject);
 }
 
 Fixed	Fixed::operator - ( const Fixed &object ) const
 {
 	Fixed	tmpObject(this->toFloat() - object.toFloat());
-
 	return (tmpObject);
 }
 
 Fixed	Fixed::operator * ( const Fixed &object ) const
 {
 	Fixed	tmpObject(this->toFloat() * object.toFloat());
-
 	return (tmpObject);
 }
 
