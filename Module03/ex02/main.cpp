@@ -6,19 +6,20 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/14 17:18:02 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:04:16 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main ( void )
 {
-	ScavTrap	jack("Jack");
+	FragTrap	jack("Jack");
 
 	std::cout << std::endl;
 
-	ScavTrap	max("Max");
+	FragTrap	max("Max");
 
 	std::cout << std::endl;
 
@@ -37,8 +38,8 @@ int main ( void )
 
 	std::cout << std::endl;
 
-	jack.guardGate();
-	max.guardGate();
+	jack.highFivesGuy();
+	max.highFivesGuy();
 
 	std::cout << std::endl;
 

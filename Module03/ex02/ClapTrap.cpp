@@ -12,7 +12,7 @@
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap( void ) :
+ClapTrap::ClapTrap( void ) : 
 	_name("default"),
 	_hitPoints(10),
 	_energyPoints(10),

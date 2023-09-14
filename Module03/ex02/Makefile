@@ -6,16 +6,16 @@
 #    By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/04 00:52:29 by ael-khel          #+#    #+#              #
-#    Updated: 2023/09/13 10:54:13 by ael-khel         ###   ########.fr        #
+#    Updated: 2023/09/14 17:07:10 by ael-khel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 ################################################################################
-NAME = ScavTrap
+NAME = FragTrap
 ################################################################################
 OBJ_DIR = objs
 
-FILES = main ClapTrap ScavTrap
+FILES = main ClapTrap ScavTrap FragTrap
 
 SRCS = ${addsuffix .cpp, $(FILES)}
 
@@ -32,7 +32,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -o $@
 
-$(OBJ_DIR)/%.o: %.cpp ClapTrap.hpp ScavTrap.hpp
+$(OBJ_DIR)/%.o: %.cpp ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 

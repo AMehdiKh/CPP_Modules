@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:26:44 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/14 17:13:48 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/14 17:12:22 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ ScavTrap&	ScavTrap::operator = ( const ScavTrap &object )
 
 void		ScavTrap::attack( const std::string& target )
 {
-	if (this->_hitPoints && this->_energyPoints)
+    if (this->_hitPoints && this->_energyPoints)
 	{
 		this->_energyPoints -= 1;
 		std::cout << "[*] ScavTrap "<< this->_name << " attacks " << target <<
