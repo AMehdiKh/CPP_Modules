@@ -6,30 +6,37 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/14 19:34:01 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:21:56 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-
 int main ( void )
 {
-	// DiamondTrap	max("Max");
-	
-	// std::cout << std::endl;
-	// max.getHitPoints();
-	// max.getEnergyPoints();
-	
-	// std::cout << std::endl;
-	// max.attack("Jack");
-	
-	// std::cout << std::endl;
-	// max.whoAmI();
+	DiamondTrap	jack("Jack");
+	std::cout << std::endl;
 
-	DiamondTrap ptr("a");
-	ptr.getEnergyPoints();
+	std::cout << "[#] Hit Points: " << jack.getHitPoints() << std::endl;
+	std::cout << "[#] Energy Points: " << jack.getEnergyPoints() << std::endl;
+	std::cout << "[#] Attack Damage: " << jack.getAttackDamage() << std::endl;
+	std::cout << std::endl;
 
+	jack.whoAmI();
+	std::cout << std::endl;
+
+	jack.attack("Max");
+	std::cout << std::endl;
+
+	jack.takeDamage(10);
+	std::cout << std::endl;
+
+	jack.beRepaired(5);
+	std::cout << std::endl;
+
+	std::cout << "[#] Hit Points: " << jack.getHitPoints() << std::endl;
+	std::cout << "[#] Energy Points: " << jack.getEnergyPoints() << std::endl;
+	std::cout << "[#] Attack Damage: " << jack.getAttackDamage() << std::endl;
 	std::cout << std::endl;
 
 	return (0);

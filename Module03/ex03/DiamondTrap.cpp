@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:56:44 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/14 19:37:09 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/15 18:19:53 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,30 @@
 
 DiamondTrap::DiamondTrap( void ) : ClapTrap("default_clap_name")
 {
+	ScavTrap tmp("Temporary");
+
 	this->_name = "default";
 	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_energyPoints = tmp.getEnergyPoints();
 	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << "[+] DiamondTrap " << this->_name << ": DiamondTrap Default constructor called\n";
 }
 
 DiamondTrap::DiamondTrap( std::string name ) : ClapTrap(name + "_clap_name")
 {
+	ScavTrap tmp("Temporary");
+
 	this->_name = name;
 	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_energyPoints = tmp.getEnergyPoints();
 	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << "[+] DiamondTrap " << this->_name << ": DiamondTrap Parameterized constructor called\n";
 }
 
 DiamondTrap::DiamondTrap( const DiamondTrap &object ) :
 	ClapTrap(object),
-	FragTrap(object),
-	ScavTrap(object)
+	ScavTrap(object),
+	FragTrap(object)
 {
 	std::cout << "[+] DiamondTrap " << this->_name << ": DiamondTrap Copy constructor called\n";
 }
@@ -63,5 +67,10 @@ void		DiamondTrap::attack( const std::string& target )
 
 void		DiamondTrap::whoAmI( void )
 {
-	std::cout << "DiamondTrap name is: " << this->_name << ", and The ClapTrap name is : " << ClapTrap::_name << ".\n";
+	std::cout << "[*] DiamondTrap name is: " << this->_name << ", and The ClapTrap name is : " << ClapTrap::_name << ".\n";
+}
+
+const std::string&	DiamondTrap::getName( void ) const
+{
+	return (this->_name);
 }

@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 00:51:25 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/14 16:49:23 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:38:13 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,29 +99,35 @@ void		ClapTrap::takeDamage( unsigned int amount )
 		std::cout << "[*] ClapTrap "<< this->_name << " can't get damaged because it's already dead!\n";
 }
 
-void		ClapTrap::getHitPoints( void ) const
+const unsigned int&	ClapTrap::getHitPoints( void ) const
 {
-	std::cout << this->_name << ": Hit points are: " << this->_hitPoints << std::endl;
+	return (this->_hitPoints);
 }
 
-void		ClapTrap::getEnergyPoints( void ) const
+const unsigned int&	ClapTrap::getEnergyPoints( void ) const
 {
-	std::cout << this->_name << ": Energy points are: " << this->_energyPoints << std::endl;
+	return (this->_energyPoints);
 }
 
-unsigned int	ClapTrap::getAttackDamage( void ) const
+const unsigned int&	ClapTrap::getAttackDamage( void ) const
 {
 	return (this->_attackDamage);
 }
 
-ClapTrap&	ClapTrap::setAttackDamage( unsigned int amount )
+ClapTrap&			ClapTrap::setHitPoints( const unsigned int hitPoints )
 {
-	this->_attackDamage = amount;
+	this->_hitPoints = hitPoints;
 	return (*this);
 }
 
-ClapTrap&	ClapTrap::setEnergyPoints( unsigned int amount )
+ClapTrap&			ClapTrap::setEnergyPoints( const unsigned int energyPoints )
 {
-	this->_energyPoints = amount;
+	this->_energyPoints = energyPoints;
+	return (*this);
+}
+
+ClapTrap&			ClapTrap::setAttackDamage( const unsigned int attackDamage)
+{
+	this->_attackDamage = attackDamage;
 	return (*this);
 }

@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:56:34 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/14 19:35:57 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:06:47 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
-class	DiamondTrap : public FragTrap, public ScavTrap {
+class	DiamondTrap : public ScavTrap, public FragTrap {
 
 	private :
 	
@@ -34,6 +34,8 @@ class	DiamondTrap : public FragTrap, public ScavTrap {
 
 		void	attack( const std::string& );
 		void	whoAmI( void );
+
+		const std::string&	getName( void ) const;
 
 		DiamondTrap&	operator = ( const DiamondTrap & );
 

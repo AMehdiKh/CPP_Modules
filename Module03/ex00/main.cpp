@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/14 16:28:59 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:40:08 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,25 @@
 int main ( void )
 {
 	ClapTrap	jack("Jack");
-	ClapTrap	max("Max");
+	std::cout << std::endl;
+
+	std::cout << "[#] Hit Points: " << jack.getHitPoints() << std::endl;
+	std::cout << "[#] Energy Points: " << jack.getEnergyPoints() << std::endl;
+	std::cout << "[#] Attack Damage: " << jack.getAttackDamage() << std::endl;
+	std::cout << std::endl;
 
 	jack.setAttackDamage(5).attack("Max");
-	max.takeDamage(jack.getAttackDamage());
-	
-	max.setAttackDamage(10).attack("Jack");
-	jack.takeDamage(max.getAttackDamage());
-	
-	max.beRepaired(5);
-	jack.beRepaired(10);
+	std::cout << std::endl;
 
+	jack.takeDamage(10);
 	std::cout << std::endl;
-	jack.getHitPoints();
-	max.getHitPoints();
-	
+
+	jack.beRepaired(5);
 	std::cout << std::endl;
-	jack.getEnergyPoints();
-	max.getEnergyPoints();
+
+	std::cout << "[#] Hit Points: " << jack.getHitPoints() << std::endl;
+	std::cout << "[#] Energy Points: " << jack.getEnergyPoints() << std::endl;
+	std::cout << "[#] Attack Damage: " << jack.getAttackDamage() << std::endl;
 	
 	std::cout << std::endl;
 
