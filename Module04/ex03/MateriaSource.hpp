@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:35:12 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/20 12:01:36 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/21 12:43:21 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class	MateriaSource : public	IMateriaSource {
 	public	:
 
 		MateriaSource( void );
-		MateriaSource( std::string const & );
 		MateriaSource( const MateriaSource & );
 		~MateriaSource();
 

@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:33:29 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/19 15:36:50 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/21 17:04:06 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Ice::Ice( void ) : AMateria("ice")
 	std::cout << "[+] Ice Default constructor called\n";
 }
 
-Ice::Ice( const Ice &object )
+Ice::Ice( const Ice &object ) : AMateria("ice")
 {
 	this->_type = object._type;
 	std::cout << "[+] Ice Copy constructor called\n";
