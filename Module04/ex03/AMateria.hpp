@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 15:46:32 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/20 11:34:53 by ael-khel         ###   ########.fr       */
+/*   Created: 2023/09/18 09:10:35 by ael-khel          #+#    #+#             */
+/*   Updated: 2023/09/21 17:02:48 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <iostream>
 # include "ICharacter.hpp"
 
-class	Character : public	ICharacter {
+class ICharacter;
+class	AMateria {
 
-	private	:
+	protected	:
 
-		std::string	_name;
-		Character	*_inventory[4];
+		std::string	_type;
 
 	public	:
 
-		Character( void );
-		Character( std::string const & );
-		Character( const Character & );
-		~Character();
+		AMateria( void );
+		AMateria( std::string const & );
+		AMateria( const AMateria & );
+		virtual	~AMateria();
 
-		const std::string&	getName( void ) const;
+		const std::string&	getType( void ) const;
 
-		void				equip( AMateria* );
-		void				unequip( int );
-		void				use( int, ICharacter& );
+		virtual AMateria*	clone() const = 0;
+		virtual void		use( ICharacter& );
 
-		Character&			operator = ( const Character & );
+		AMateria&	operator = ( const AMateria & );
 
 };
 
