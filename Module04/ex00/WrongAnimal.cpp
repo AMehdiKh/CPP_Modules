@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 14:56:27 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 11:20:56 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:02:07 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@ WrongAnimal::WrongAnimal( void ) : _type("WrongAnimal")
 	std::cout << "[+] WrongAnimal Default constructor called\n";
 }
 
-WrongAnimal::WrongAnimal( const WrongAnimal &object )
+WrongAnimal::WrongAnimal( const WrongAnimal &object ) : _type(object._type)
 {
-	this->_type = object._type;
 	std::cout << "[+] WrongAnimal Copy constructor called\n";
 }
 
@@ -30,9 +29,9 @@ WrongAnimal::~WrongAnimal( void )
 
 WrongAnimal&	WrongAnimal::operator = ( const WrongAnimal &object )
 {
+	std::cout << "[+] WrongAnimal Copy assignment operator called\n";
 	if (this != &object)
 		this->_type = object._type;
-	std::cout << "[+] WrongAnimal Copy assignment operator called\n";
 	return (*this);
 }
 
@@ -45,3 +44,4 @@ const std::string&	WrongAnimal::getType( void ) const
 {
 	return (this->_type);
 }
+

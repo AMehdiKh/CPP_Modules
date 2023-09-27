@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/03 20:30:58 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 11:18:32 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:34:01 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class	Animal {
 		virtual ~Animal();
 
 		virtual void		makeSound( void ) const;
+
 		const std::string&	getType( void ) const;
 
 		Animal&	operator = ( const Animal & );

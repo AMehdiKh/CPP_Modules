@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:38:51 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/21 17:03:25 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 18:15:00 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include "AMateria.hpp"
 
 class AMateria;
+
 class	ICharacter {
 
 	public	:

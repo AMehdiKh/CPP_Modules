@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:49:27 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/21 16:56:23 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 18:24:43 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 MateriaSource::MateriaSource( void )
 {
+	std::cout << "[+] MateriaSource Default constructor called\n";
 	for (int i = 0; i < 4; ++i)
 		this->_memory[i] = NULL;
-	std::cout << "[+] MateriaSource Default constructor called\n";
-
 }
 
 MateriaSource::MateriaSource( const MateriaSource &object )
@@ -39,17 +38,18 @@ MateriaSource::~MateriaSource()
 
 MateriaSource&			MateriaSource::operator = ( const MateriaSource &object )
 {
-	for (int i = 0; i < 4; ++i)
+	std::cout << "[+] MateriaSource Copy constructor called\n";
+	if (this != &object)
 	{
-		if (object._memory[i] == NULL)
-			this->_memory[i] = NULL;
-		else
+		for (int i = 0; i < 4; ++i)
 		{
 			delete this->_memory[i];
-			this->_memory[i] = object._memory[i]->clone();
+			if (object._memory[i] == NULL)
+				this->_memory[i] = NULL;
+			else
+				this->_memory[i] = object._memory[i]->clone();
 		}
 	}
-	std::cout << "[+] MateriaSource Copy constructor called\n";
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 19:34:45 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 11:20:32 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:43:20 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,18 @@
 # define CAT_HPP
 
 # include <iostream>
-#include "Animal.hpp"
+# include "Animal.hpp"
 
-class	Cat : public    Animal {
+class	Cat : public	Animal {
 
 	public	:
 
 		Cat( void );
 		Cat( const Cat & );
-		~Cat();
+		virtual	~Cat();
 
-		void	makeSound( void ) const;
-	
+		virtual	void	makeSound( void ) const;
+
 		Cat&	operator = ( const Cat & );
 
 };

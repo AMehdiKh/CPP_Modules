@@ -6,13 +6,12 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 19:51:12 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:36:16 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 #include "Cat.hpp"
-// #include <iostream>
 
 int	main ( void )
 {

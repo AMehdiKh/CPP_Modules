@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 19:35:42 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 19:43:03 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:49:00 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,35 @@
 
 Cat::Cat( void )
 {
-	this->catBrain = new Brain();
-	this->_type = "Cat";
 	std::cout << "[+] Cat Default constructor called, Brain memory allocated\n";
+	this->_type = "Cat";
+	this->catBrain = new Brain();
 }
 
-Cat::Cat( const Cat &object ) : Animal()
+Cat::Cat( const Cat &object ) : Animal(object)
 {
-	this->catBrain = new Brain(*object.catBrain);
-	// for (int i = 0; i < 100; ++i)
-	// 	this->catBrain->_ideas[i] = object.catBrain->_ideas[i];
-	this->_type = object._type;
 	std::cout << "[+] Cat Copy constructor called\n";
+	this->catBrain = new Brain(*object.catBrain);
 }
 
 Cat::~Cat( void )
 {
-	delete this->catBrain;
 	std::cout << "[x] Cat destructor called, Brain memory freed\n";
+	delete this->catBrain;
 }
 
 Cat&	Cat::operator = ( const Cat &object )
 {
+	std::cout << "[+] Cat Copy assignment operator called\n";
 	if (this != &object)
 	{
-		this->catBrain = new Brain(*object.catBrain);
-		// for (int i = 0; i < 100; ++i)
-		// 	this->catBrain->_ideas[i] = object.catBrain->_ideas[i];
 		this->_type = object._type;
+		*this->catBrain = *object.catBrain;
 	}
-	std::cout << "[+] Cat Copy assignment operator called\n";
 	return (*this);
 }
 
-void	Cat::makeSound() const
+void	Cat::makeSound( void ) const
 {
 	std::cout << "* Cat Sound *" << std::endl;
 }

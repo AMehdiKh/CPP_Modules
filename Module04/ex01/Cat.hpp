@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 19:34:45 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 14:32:28 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:52:10 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include "Brain.hpp"
 
 class	Cat : public	Animal {
-	
+
 	private :
 
 		Brain	*catBrain;
@@ -29,10 +29,10 @@ class	Cat : public	Animal {
 
 		Cat( void );
 		Cat( const Cat & );
-		~Cat();
+		virtual	~Cat();
 
-		void	makeSound( void ) const;
-	
+		virtual	void	makeSound( void ) const;
+
 		Cat&	operator = ( const Cat & );
 
 };

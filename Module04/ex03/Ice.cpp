@@ -6,20 +6,20 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:33:29 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/21 17:04:06 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 19:53:17 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
+#include "AMateria.hpp"
 
 Ice::Ice( void ) : AMateria("ice")
 {
 	std::cout << "[+] Ice Default constructor called\n";
 }
 
-Ice::Ice( const Ice &object ) : AMateria("ice")
+Ice::Ice( const Ice &object ) : AMateria(object)
 {
-	this->_type = object._type;
 	std::cout << "[+] Ice Copy constructor called\n";
 }
 
@@ -30,13 +30,13 @@ Ice::~Ice( void )
 
 Ice&	Ice::operator = ( const Ice &object )
 {
+	std::cout << "[+] Ice Copy assignment operator called\n";
 	if (this != &object)
 		this->_type = object._type;
-	std::cout << "[+] Ice Copy assignment operator called\n";
 	return (*this);
 }
 
-Ice*	Ice::clone( void ) const
+AMateria*	Ice::clone( void ) const
 {
 	return (new Ice(*this));
 }

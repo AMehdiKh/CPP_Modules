@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 14:54:17 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 11:20:49 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:31:35 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,10 @@ class	WrongAnimal {
 
 		WrongAnimal( void );
 		WrongAnimal( const WrongAnimal & );
-		virtual	~WrongAnimal();
+		virtual ~WrongAnimal();
 
-		void				makeSound( void ) const;
+		void		makeSound( void ) const;
+
 		const std::string&	getType( void ) const;
 
 		WrongAnimal&	operator = ( const WrongAnimal & );

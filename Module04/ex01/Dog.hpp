@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 19:28:38 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 14:32:11 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:52:40 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ class	Dog : public	Animal {
 
 		Dog( void );
 		Dog( const Dog & );
-		~Dog();
+		virtual	~Dog();
 
-		void	makeSound( void ) const;
+		virtual	void	makeSound( void ) const;
 
 		Dog&	operator = ( const Dog & );
 

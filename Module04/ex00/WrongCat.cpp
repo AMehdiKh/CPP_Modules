@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 15:01:32 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 11:21:02 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 11:33:30 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 WrongCat::WrongCat( void )
 {
-	this->_type = "WrongCat";
 	std::cout << "[+] WrongCat Default constructor called\n";
+	this->_type = "WrongCat";
 }
 
-WrongCat::WrongCat( const WrongCat &object ) : WrongAnimal()
+WrongCat::WrongCat( const WrongCat &object ) : WrongAnimal(object)
 {
-	this->_type = object._type;
 	std::cout << "[+] WrongCat Copy constructor called\n";
 }
 
@@ -31,13 +30,13 @@ WrongCat::~WrongCat( void )
 
 WrongCat&	WrongCat::operator = ( const WrongCat &object )
 {
+	std::cout << "[+] WrongCat Copy assignment operator called\n";
 	if (this != &object)
 		this->_type = object._type;
-	std::cout << "[+] WrongCat Copy assignment operator called\n";
 	return (*this);
 }
 
-void	WrongCat::makeSound() const
+void	WrongCat::makeSound( void ) const
 {
 	std::cout << "* WrongCat Sound *" << std::endl;
 }

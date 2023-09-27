@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:29:12 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/19 19:48:44 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 18:42:17 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ class	Ice : public	AMateria {
 
 		Ice( void );
 		Ice( const Ice & );
-		~Ice();
+		virtual	~Ice();
 
-		Ice*		clone( void ) const;
-		void		use( ICharacter& );
+		virtual	AMateria*	clone( void ) const;
+		virtual	void		use( ICharacter& );
 
 		Ice&	operator = ( const Ice & );
 

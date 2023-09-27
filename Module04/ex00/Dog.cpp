@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 19:32:29 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/17 11:20:42 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/27 10:43:50 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,12 @@
 
 Dog::Dog( void )
 {
-	this->_type = "Dog";
 	std::cout << "[+] Dog Default constructor called\n";
+	this->_type = "Dog";
 }
 
-Dog::Dog( const Dog &object ) : Animal()
+Dog::Dog( const Dog &object ) : Animal(object)
 {
-	this->_type = object._type;
 	std::cout << "[+] Dog Copy constructor called\n";
 }
 
@@ -31,13 +30,13 @@ Dog::~Dog( void )
 
 Dog&	Dog::operator = ( const Dog &object )
 {
+	std::cout << "[+] Dog Copy assignment operator called\n";
 	if (this != &object)
 		this->_type = object._type;
-	std::cout << "[+] Dog Copy assignment operator called\n";
 	return (*this);
 }
 
-void	Dog::makeSound() const
+void	Dog::makeSound( void ) const
 {
 	std::cout << "* Dog Sound *" << std::endl;
 }
