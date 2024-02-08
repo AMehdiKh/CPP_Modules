@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 19:35:42 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/27 11:49:00 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:30:44 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Cat::Cat( void )
 
 Cat::Cat( const Cat &object ) : Animal(object)
 {
-	std::cout << "[+] Cat Copy constructor called\n";
+	std::cout << "[+] Cat Copy constructor called, Brain memory allocated\n";
 	this->catBrain = new Brain(*object.catBrain);
 }
 

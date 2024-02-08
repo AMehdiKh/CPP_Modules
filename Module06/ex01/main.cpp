@@ -5,35 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/29 20:32:50 by ael-khel         ###   ########.fr       */
+/*   Created: 2024/01/29 02:31:36 by ael-khel          #+#    #+#             */
+/*   Updated: 2024/02/01 02:14:20 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Serializer.hpp"
+#include <iomanip>
 
-int	main ( void )
+int	main( void )
 {
-	Animal	*animal[10];
+	Data		my_data;
+	uintptr_t	serial_number;
 
-	for (int i = 0; i < 10; ++i)
-	{
-		if (i < 5)
-			animal[i] = new Dog();
-		else
-			animal[i] = new Cat();
-	}
-
-	std::cout << "\n###########################################################\n\n";
-
-	for (int i = 0; i < 10; ++i)
-	{
-		if (i < 5)
-			delete animal[i];
-		else
-			delete animal[i];
-	}
+	serial_number = Serializer::serialize( &my_data );
+	std::cout << "my_data serial number is : " << serial_number << std::endl;
+	std::cout << "Name\t: " << Serializer::deserialize(serial_number)->name << std::endl;
+	std::cout << "Age\t: " << Serializer::deserialize(serial_number)->age << std::endl;
 
 	return (0);
 }

@@ -6,12 +6,11 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 17:22:36 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/27 19:53:02 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/29 11:51:17 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
-#include "AMateria.hpp"
 
 Cure::Cure( void ) : AMateria("cure")
 {

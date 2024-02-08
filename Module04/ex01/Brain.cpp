@@ -6,11 +6,12 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/16 16:09:57 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/27 11:56:10 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:12:02 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Brain.hpp"
+#include <string>
 
 Brain::Brain( void )
 {

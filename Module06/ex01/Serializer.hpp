@@ -1,39 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/29 20:32:50 by ael-khel         ###   ########.fr       */
+/*   Created: 2024/02/01 01:08:03 by ael-khel          #+#    #+#             */
+/*   Updated: 2024/02/02 18:08:27 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#pragma once
 
-int	main ( void )
-{
-	Animal	*animal[10];
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-	for (int i = 0; i < 10; ++i)
-	{
-		if (i < 5)
-			animal[i] = new Dog();
-		else
-			animal[i] = new Cat();
-	}
+# include <iostream>
+# include <cstdint>
 
-	std::cout << "\n###########################################################\n\n";
+struct	Data {
 
-	for (int i = 0; i < 10; ++i)
-	{
-		if (i < 5)
-			delete animal[i];
-		else
-			delete animal[i];
-	}
+	std::string	name;
+	int			age;
+	
+	Data (void) : name("Mehdi"), age(20) {}
 
-	return (0);
-}
+};
+
+class	Serializer {
+
+	private	:
+
+		Serializer( void );
+
+	public	:
+
+		static uintptr_t	serialize( Data* );
+		static Data*		deserialize( uintptr_t );
+
+};
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/15 19:32:29 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/27 11:51:15 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:29:58 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Dog::Dog( void )
 
 Dog::Dog( const Dog &object ) : Animal(object)
 {
-	std::cout << "[+] Dog Copy constructor called\n";
+	std::cout << "[+] Dog Copy constructor called, Brain memory allocated\n";
 	this->dogBrain = new Brain(*object.dogBrain);
 }
 

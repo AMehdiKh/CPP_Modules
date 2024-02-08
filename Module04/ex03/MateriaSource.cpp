@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 11:49:27 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/27 18:24:43 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:25:00 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ MateriaSource::MateriaSource( void )
 
 MateriaSource::MateriaSource( const MateriaSource &object )
 {
+	std::cout << "[+] MateriaSource Copy constructor called\n";
 	for (int i = 0; i < 4; ++i)
 	{
 		if (object._memory[i] == NULL)
@@ -28,7 +29,6 @@ MateriaSource::MateriaSource( const MateriaSource &object )
 		else
 			this->_memory[i] = object._memory[i]->clone();
 	}
-	std::cout << "[+] MateriaSource Copy constructor called\n";
 }
 
 MateriaSource::~MateriaSource()
@@ -55,20 +55,17 @@ MateriaSource&			MateriaSource::operator = ( const MateriaSource &object )
 
 void		MateriaSource::learnMateria( AMateria* object)
 {
-	bool	fullInventory;
-
-	fullInventory = true;
 	for (int i = 0; (i < 4 && object != NULL); ++i)
 	{
 		if (this->_memory[i] == NULL)
 		{
 			this->_memory[i] = object;
-			fullInventory = false;
-			break ;
+			std::cout << "[*] The Materia [" << object->getType() << "] stored in memory.\n";
+			return;
 		}
 	}
-	if (fullInventory == true)
-		delete object;
+	std::cout << "[!] The Memory is full Materia [" << object->getType() << "] is destroyed.\n";
+	delete object;
 }
 
 AMateria*	MateriaSource::createMateria( std::string const &type )
@@ -78,8 +75,12 @@ AMateria*	MateriaSource::createMateria( std::string const &type )
 		if (this->_memory[i] != NULL)
 		{
 			if (this->_memory[i]->getType() == type)
+			{
+				std::cout << "[*] The Materia [" << type << "] is created.\n";
 				return (this->_memory[i]->clone());
+			}
 		}
 	}
+	std::cout << "[!] The Materia [" << type << "] type is unknown.\n";
 	return (NULL);
 }

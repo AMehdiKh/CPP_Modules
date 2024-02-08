@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:25:58 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/27 19:52:31 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/29 13:27:49 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Character::Character( void ) : _name("default")
 
 Character::Character( std::string const &name ) : _name(name)
 {
-	std::cout << "[+] Character " << this->_name << " Parameterized constructor called\n";
+	std::cout << "[+] Character [" << this->_name << "] Parameterized constructor called\n";
 	for (int i = 0; i < 4; ++i)
 	{
 		this->_inventory[i] = NULL;
@@ -34,7 +34,7 @@ Character::Character( std::string const &name ) : _name(name)
 
 Character::Character( const Character &object ) : _name(object._name)
 {
-	std::cout << "[+] Character " << this->_name << "Copy constructor called\n";
+	std::cout << "[+] Character [" << this->_name << "] Copy constructor called\n";
 	for (int i = 0; i < 4; ++i)
 	{
 		if (object._inventory[i] == NULL)
@@ -47,12 +47,12 @@ Character::Character( const Character &object ) : _name(object._name)
 
 Character::~Character()
 {
-	std::cout << "[+] Character " << this->_name << " destructor called\n";
+	std::cout << "[+] Character [" << this->_name << "] destructor called\n";
 }
 
 Character&	Character::operator = ( const Character &object )
 {
-	std::cout << "[+] Character " << object._name << "Copy constructor called\n";
+	std::cout << "[+] Character [" << object._name << "] Copy constructor called\n";
 	if (this != &object)
 	{
 		this->_name = object._name;
@@ -76,33 +76,35 @@ const std::string&	Character::getName( void ) const
 
 void	Character::equip( AMateria* object )
 {
-	bool	fullInventory;
-
-	fullInventory = true;
 	this->_freeUnequiped();
 	for (int i = 0; (i < 4 && object != NULL); ++i)
 	{
 		if (this->_inventory[i] == NULL)
 		{
+			std::cout << "[*] The Materia [" << object->getType() << "] is equiped in The inventory.\n";
 			this->_inventory[i] = object;
-			fullInventory = false;
-			break ;
+			return;
 		}
 	}
-	if (fullInventory == true)
-		delete object;
+	std::cout << "[!] The inventory is full, The Materia [" << object->getType() << "] is destroyed.\n";
+	delete object;
 }
 
 void	Character::unequip( int idx )
 {
 	if ((idx >= 0 && idx <= 3) && this->_inventory[idx] != NULL)
+	{
+		std::cout << "[*] The Materia [" << this->_inventory[idx]->getType() << "] is unequiped from The inventory.\n";
 		this->_unequiped[idx] = true;
+		return;
+	}
+	std::cout << "[!] unequiping The Materia is failed.\n";
 }
 
 void	Character::use( int idx, ICharacter& target )
 {
 	this->_freeUnequiped();
-	if (this->_inventory[idx])
+	if (this->_inventory[idx] != NULL)
 		this->_inventory[idx]->use(target);
 }
 

@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 15:38:51 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/27 18:15:00 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:12:26 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class	ICharacter {
 
 		virtual ~ICharacter() {}
 
-		virtual const std::string&	getName() const = 0;
-		virtual void 				equip(AMateria* m) = 0;
-		virtual void 				unequip(int idx) = 0;
-		virtual void 				use(int idx, ICharacter& target) = 0;
+		virtual const std::string&	getName( void ) const = 0;
+		virtual void 				equip( AMateria* m ) = 0;
+		virtual void 				unequip( int ) = 0;
+		virtual void 				use( int, ICharacter& ) = 0;
 
 };
 

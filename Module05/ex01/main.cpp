@@ -5,35 +5,29 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/29 20:32:50 by ael-khel         ###   ########.fr       */
+/*   Created: 2024/01/04 22:20:54 by ael-khel          #+#    #+#             */
+/*   Updated: 2024/01/18 00:28:44 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Form.hpp"
 
-int	main ( void )
+int	main( void )
 {
-	Animal	*animal[10];
-
-	for (int i = 0; i < 10; ++i)
+	Bureaucrat	mehdi("MEHDI", 5);
+	try
 	{
-		if (i < 5)
-			animal[i] = new Dog();
-		else
-			animal[i] = new Cat();
+		Form	form("chahada dl7ayat XD", 10, 0);
 	}
-
-	std::cout << "\n###########################################################\n\n";
-
-	for (int i = 0; i < 10; ++i)
+	catch ( std::exception &e )
 	{
-		if (i < 5)
-			delete animal[i];
-		else
-			delete animal[i];
+		std::cerr << "[+] Exception catched.\n";
+		std::cerr << e.what();
 	}
+	Form	form("chahada dl3ozoba hh", 5, 50);
+	std::cout << form;
+	mehdi.signForm(form);
+	std::cout << form;
 
 	return (0);
 }

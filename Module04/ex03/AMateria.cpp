@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 09:56:55 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/27 17:59:36 by ael-khel         ###   ########.fr       */
+/*   Updated: 2023/09/28 13:48:58 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ AMateria::AMateria( void ) : _type("default")
 
 AMateria::AMateria( const std::string &type ) : _type(type)
 {
-	std::cout << "[+] AMateria " << this->_type << " Parameterized constructor called\n";
+	std::cout << "[+] AMateria [" << this->_type << "] Parameterized constructor called\n";
 }
 
 AMateria::AMateria( const AMateria &object ) : _type(object._type)
 {
-	std::cout << "[+] AMateria Copy constructor called\n";
+	std::cout << "[+] AMateria [" << this->_type << "] Copy constructor called\n";
 }
 
 AMateria::~AMateria( void )
 {
-	std::cout << "[+] AMateria " << this->_type << " destructor called\n";
+	std::cout << "[+] AMateria [" << this->_type << "] destructor called\n";
 }
 
 AMateria&	AMateria::operator = ( const AMateria &object )

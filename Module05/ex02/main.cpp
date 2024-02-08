@@ -5,35 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/29 20:32:50 by ael-khel         ###   ########.fr       */
+/*   Created: 2024/01/04 22:20:54 by ael-khel          #+#    #+#             */
+/*   Updated: 2024/01/18 00:03:23 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
-int	main ( void )
+int	main( void )
 {
-	Animal	*animal[10];
+	Bureaucrat				mehdi("MEHDI", 1);
+	ShrubberyCreationForm	tree("Garden");
 
-	for (int i = 0; i < 10; ++i)
-	{
-		if (i < 5)
-			animal[i] = new Dog();
-		else
-			animal[i] = new Cat();
-	}
-
-	std::cout << "\n###########################################################\n\n";
-
-	for (int i = 0; i < 10; ++i)
-	{
-		if (i < 5)
-			delete animal[i];
-		else
-			delete animal[i];
-	}
+	mehdi.executeForm(tree);
+	mehdi.signForm(tree);
+	mehdi.executeForm(tree);
 
 	return (0);
 }

@@ -5,35 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 00:52:19 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/29 20:32:50 by ael-khel         ###   ########.fr       */
+/*   Created: 2024/01/27 02:51:51 by ael-khel          #+#    #+#             */
+/*   Updated: 2024/01/28 18:56:13 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "ScalarConverter.hpp"
 
-int	main ( void )
+int	main(int ac, char **av)
 {
-	Animal	*animal[10];
-
-	for (int i = 0; i < 10; ++i)
+	if (ac != 2)
 	{
-		if (i < 5)
-			animal[i] = new Dog();
-		else
-			animal[i] = new Cat();
+		std::cout << "Usage: ./convert VALUE" << std::endl;
+		return (1);
 	}
-
-	std::cout << "\n###########################################################\n\n";
-
-	for (int i = 0; i < 10; ++i)
+	try
 	{
-		if (i < 5)
-			delete animal[i];
-		else
-			delete animal[i];
+		ScalarConverter::convert(av[1]);
 	}
-
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	
 	return (0);
 }

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/16 16:09:59 by ael-khel          #+#    #+#             */
-/*   Updated: 2023/09/28 09:25:02 by ael-khel         ###   ########.fr       */
+/*   Created: 2024/01/16 16:20:06 by ael-khel          #+#    #+#             */
+/*   Updated: 2024/01/18 00:21:58 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
-# include <iostream>
+# include "AForm.hpp"
 
-class	Brain {
+class	RobotomyRequestForm : public	AForm {
 
-	private	:
+	private :
 
-		std::string	_ideas[100];
+		const std::string	_target;
+
+		RobotomyRequestForm( void );
 
 	public	:
 
-		Brain( void );
-		Brain( const Brain & );
-		~Brain();
+		RobotomyRequestForm( std::string );
+		RobotomyRequestForm( const RobotomyRequestForm & );
+		virtual	~RobotomyRequestForm( );
 
-		Brain&	operator = ( const Brain & );
+		virtual void	execute( const Bureaucrat& ) const;
+
+		RobotomyRequestForm&	operator = ( const RobotomyRequestForm & );
 
 };
 
