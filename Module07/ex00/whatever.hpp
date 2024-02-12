@@ -1,30 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/01 04:40:04 by ael-khel          #+#    #+#             */
-/*   Updated: 2024/02/11 21:24:08 by ael-khel         ###   ########.fr       */
+/*   Created: 2024/02/01 04:30:59 by ael-khel          #+#    #+#             */
+/*   Updated: 2024/02/11 21:20:49 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iter.hpp"
+#pragma once
 
-int main( void )
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
+
+# include <iostream>
+
+template	<typename T>
+void	swap(T& a, T& b)
 {
-	int			arr[] = { 1, 3, 3, 7 }; 
-	std::string name[] = { "Ahmed ", "El ", "Mehdi ", "El ", "Khelloufi" };
+	T	tmp;
 
-	std::cout << "std::string *:" << std::endl;
-	iter(name, sizeof(name) / sizeof(std::string), print);
-	std::cout << std::endl;
-
-	std::cout << "int *:" << std::endl; 
-	iter(arr, sizeof(arr) / sizeof(int), print);
-	std::cout << std::endl;
-
-	return (0);
+	tmp = a;
+	a = b;
+	b = tmp;
 }
 
+template	<typename T>
+T		min(T a, T b)
+{
+	return (a < b ? a : b);
+}
+
+template	<typename T>
+T		max(T a, T b)
+{
+	return (a > b ? a : b);
+}
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 04:30:59 by ael-khel          #+#    #+#             */
-/*   Updated: 2024/02/08 03:38:43 by ael-khel         ###   ########.fr       */
+/*   Updated: 2024/02/11 21:26:24 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,11 @@ Array<T>&	Array< T >::operator = ( const Array &arr )
 {
 	if (this != &arr)
 	{
-		try { this->_arr( new T[arr.size()] ); }
+		try
+		{
+			delete [] this->_arr;
+			this->_arr( new T[arr.size()] );
+		}
 		catch ( const std::exception &e )
 		{
 			std::cout << e.what() << std::endl;

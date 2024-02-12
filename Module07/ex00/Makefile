@@ -6,7 +6,7 @@
 #    By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/27 02:35:27 by ael-khel          #+#    #+#              #
-#    Updated: 2024/02/01 04:42:41 by ael-khel         ###   ########.fr        #
+#    Updated: 2024/02/12 00:32:56 by ael-khel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS = ${addsuffix .cpp, $(FILES)}
 
 OBJS = ${SRCS:%.cpp=$(OBJ_DIR)/%.o}
 
-HEADERS = template.hpp
+HEADERS = whatever.hpp
 ################################################################################
 CC = c++
 
