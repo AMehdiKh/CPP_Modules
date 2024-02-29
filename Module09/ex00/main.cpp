@@ -6,28 +6,27 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 04:40:04 by ael-khel          #+#    #+#             */
-/*   Updated: 2024/02/16 14:02:08 by ael-khel         ###   ########.fr       */
+/*   Updated: 2024/02/29 02:52:08 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#include "BitcoinExchange.hpp"
 
-#define SIZE 10
-
-int main( void )
+int	main( int ac, char **av )
 {
-	std::vector<int>	containerInt;
+	if (ac != 2)
+		std::cerr << "Error: The program must take a file as argument." << std::endl;
 
-	srand(time(NULL));
-	std::cout << "containerInt elements are:\n";
-	for (int i = 0; i < SIZE; ++i)
+	try
 	{
-		int	value = rand() % 10;
-		containerInt.push_back(value);
-		std::cout << value << std::endl;
+		BitcoinExchange	bitcoin;
+
+		bitcoin.run( av[1] );
 	}
-	easyfind(containerInt, rand() % 10);
+	catch ( std::exception &e )
+	{
+		std::cerr << e.what() << std::endl;
+	}
 
 	return (0);
 }
-

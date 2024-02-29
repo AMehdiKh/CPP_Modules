@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 04:30:59 by ael-khel          #+#    #+#             */
-/*   Updated: 2024/02/22 09:42:22 by ael-khel         ###   ########.fr       */
+/*   Updated: 2024/02/22 09:50:41 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#ifndef EASYFIND_HPP
-# define EASYFIND_HPP
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
 # include <iostream>
 # include <algorithm>
-# include <vector>
-# include <deque>
-# include <list>
+# include <stack>
 
-template	< typename	T >
-void	easyfind(T& container, int value)
-{
-	(find(container.begin(), container.end(), value) == container.end()) 
-	? std::cout << "The value " << value << " is NOT Found.\n"
-	: std::cout << "The value " << value << " is Found.\n";
-}
+template < typename T, typename C = std::deque<T> >
+class	MutantStack : public std::stack< T, C > {
+
+	public	:
+
+		MutantStack( void ) { }
+		MutantStack( const MutantStack &obj ) : std::stack<T, C>(obj) { }
+		~MutantStack( ) { }
+
+		MutantStack&	operator = ( const MutantStack &obj )
+		{
+			std::stack<T, C>::operator = (obj);
+			return (*this);
+		}
+		
+		typedef typename C::iterator iterator;
+
+		iterator	begin() { return (this->c.begin()); }
+		iterator	end() { return (this->c.end()); }
+
+};
 
 #endif

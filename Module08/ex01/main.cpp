@@ -6,28 +6,24 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 04:40:04 by ael-khel          #+#    #+#             */
-/*   Updated: 2024/02/16 14:02:08 by ael-khel         ###   ########.fr       */
+/*   Updated: 2024/02/21 00:44:03 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "easyfind.hpp"
+#include "Span.hpp"
 
-#define SIZE 10
-
-int main( void )
+int	main( void )
 {
-	std::vector<int>	containerInt;
+	Span sp(5);
 
-	srand(time(NULL));
-	std::cout << "containerInt elements are:\n";
-	for (int i = 0; i < SIZE; ++i)
-	{
-		int	value = rand() % 10;
-		containerInt.push_back(value);
-		std::cout << value << std::endl;
-	}
-	easyfind(containerInt, rand() % 10);
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
 
 	return (0);
 }
-
