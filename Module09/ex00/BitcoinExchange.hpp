@@ -6,13 +6,12 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 04:30:59 by ael-khel          #+#    #+#             */
-/*   Updated: 2024/02/29 09:04:37 by ael-khel         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:16:53 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 
-#include <iterator>
 #ifndef	BITCOINEXCHANGE_HPP
 # define BITCOINEXCHANGE_HPP
 
@@ -21,7 +20,9 @@
 # include <map>
 # include <iostream>
 # include <ctime>
+# include <cstdlib>
 
+typedef std::map< std::string, double >::iterator	map_iterator;
 
 class	BitcoinExchange {
 
@@ -36,6 +37,8 @@ class	BitcoinExchange {
 		void		_checkDate( const std::string &, int, int, int );
 		bool		_isLeapYear( int );
 		double		_checkAmount( const std::string & );
+		std::string	_trimWs( const std::string & );
+
 
 	public	:
 
@@ -43,7 +46,7 @@ class	BitcoinExchange {
 		BitcoinExchange( const BitcoinExchange & );
 		~BitcoinExchange( );
 
-		void	run( const std::string ); // try ref after use it on av[1] and see if it works
+		void	run( const std::string & );
 
 		BitcoinExchange&	operator = ( const BitcoinExchange & );
 

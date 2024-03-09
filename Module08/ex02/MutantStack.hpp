@@ -6,7 +6,7 @@
 /*   By: ael-khel <ael-khel@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 04:30:59 by ael-khel          #+#    #+#             */
-/*   Updated: 2024/02/22 09:50:41 by ael-khel         ###   ########.fr       */
+/*   Updated: 2024/03/08 23:15:37 by ael-khel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ class	MutantStack : public std::stack< T, C > {
 		
 		typedef typename C::iterator iterator;
 
+		// c is protected member object in std::stack referenced to the underlying container used to store the elements
 		iterator	begin() { return (this->c.begin()); }
 		iterator	end() { return (this->c.end()); }
 
